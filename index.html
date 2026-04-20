@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TES GAY BY VINN</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a, #1a0033);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(128,0,255,0.5);
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #c084fc;
+    }
+
+    p {
+      font-size: 14px;
+      opacity: 0.8;
+      color: #d8b4fe;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: #111;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #7c3aed, #9333ea);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #9333ea;
+    }
+
+    #loading {
+      margin-top: 15px;
+      display: none;
+      font-size: 14px;
+      color: #c084fc;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% {opacity: 1;}
+      50% {opacity: 0.3;}
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>💜 TES GAY BY VINN</h1>
+    <p>Algoritma rahasia sedang digunakan...</p>
+
+    <input type="text" id="nameInput" placeholder="Masukkan nama">
+    <button onclick="checkName()">Mulai Scan</button>
+
+    <div id="loading">Scanning data...</div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkName() {
+      let name = document.getElementById("nameInput").value.trim().toLowerCase();
+      let result = document.getElementById("result");
+      let loading = document.getElementById("loading");
+
+      // daftar nama yang tidak terdeteksi
+      let aman = [
+        "alvin",
+        "alvian",
+        "alvian ganesa",
+        "vinn",
+        "alvian ganesa pabidang"
+      ];
+
+      if (name === "") {
+        result.innerHTML = "Masukkan nama dulu!";
+        return;
+      }
+
+      result.innerHTML = "";
+      loading.style.display = "block";
+
+      setTimeout(() => {
+        loading.style.display = "none";
+
+        if (aman.includes(name)) {
+          result.innerHTML = "❌ Tidak terdeteksi 😎";
+        } else {
+          result.innerHTML = "🏳️‍🌈 Terdeteksi 100%!";
+        }
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
